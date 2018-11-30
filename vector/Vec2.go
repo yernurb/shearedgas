@@ -36,3 +36,13 @@ func (v Vec2) Norm2() float64 {
 func (v Vec2) Norm() float64 {
 	return math.Sqrt(v.Norm2())
 }
+
+func (v *Vec2) Null() {
+	v.X = 0
+	v.Y = 0
+}
+
+func (v *Vec2) Unit() {
+	v.X /= v.Norm()
+	v.Y /= v.Norm()
+}
