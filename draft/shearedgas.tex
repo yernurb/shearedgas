@@ -1,7 +1,21 @@
-\documentclass[preprint, 12pt]{revtex4}
+\documentclass[preprint, aps, pra]{revtex4-1}
 
 \usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage[default]{sourcesanspro}
+\usepackage[T1]{fontenc}
 
 \begin{document}
-  Hello \LaTeX. This is a test draft paper. Trying to make it work from VSCode
+  \title{Sheared Granular Gas Dynamics}
+  \author{Yernur Baibolatov}
+  \affiliation{STEM park, KazNPU after Abai}
+  \maketitle
+  Hello \LaTeX. This is a test draft paper. Trying to make it work from VSCode. Adding BibTex file
+  \cite{Brilliantov:2004book, Smith:2013jd}.
+
+
+  \bibliographystyle{apsrev4-1}
+  \bibliography{shearedgas.bib}
+
 \end{document}
