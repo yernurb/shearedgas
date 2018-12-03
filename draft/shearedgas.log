@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.12.3)  3 DEC 2018 18:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.12.3)  4 DEC 2018 03:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -372,21 +372,21 @@ LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/m/n' will be
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/m/it' will be
 (Font)              scaled to size 10.95pt on input line 59.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
-(Font)              scaled to size 10.95pt on input line 69.
-) [2] (./shearedgas.aux) ) 
+(Font)              scaled to size 10.95pt on input line 71.
+ [2]) [3] (./shearedgas.aux) ) 
 Here is how much of TeX's memory you used:
- 4013 strings out of 492639
- 53041 string characters out of 6129287
- 117597 words of memory out of 5000000
- 7849 multiletter control sequences out of 15000+600000
+ 4089 strings out of 492639
+ 55748 string characters out of 6129287
+ 127597 words of memory out of 5000000
+ 7925 multiletter control sequences out of 15000+600000
  83631 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,7n,34p,286b,229s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,7n,34p,862b,340s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/sourcesanspro/a_5tbsmu.enc}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/sourcesanspro/a_ggs4wk.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Bold.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-It.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb>
-Output written on shearedgas.pdf (2 pages, 117462 bytes).
+Output written on shearedgas.pdf (3 pages, 122970 bytes).
 PDF statistics:
- 25 PDF objects out of 1000 (max. 8388607)
- 17 compressed objects within 1 object stream
+ 28 PDF objects out of 1000 (max. 8388607)
+ 19 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

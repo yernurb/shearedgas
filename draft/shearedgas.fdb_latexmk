@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex shearedgas"] 1543839520 "shearedgas.aux" "shearedgas.bbl" "shearedgas" 1543839521
+["bibtex shearedgas"] 1543871888 "shearedgas.aux" "shearedgas.bbl" "shearedgas" 1543871889
   "/usr/local/texlive/2018/texmf-dist/bibtex/bst/revtex/apsrev4-1.bst" 1480098436 71518 fec93f06df0c073f83d2330456bd19c2 ""
-  "shearedgas.aux" 1543839520 506 e71122e27804451bf856d947dfc9c346 ""
-  "shearedgas.bib" 1543838375 456 4e5dc687533c47bfbeb2ddfcb86df2b1 ""
-  "shearedgasNotes.bib" 1543839520 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "shearedgas.aux" 1543871889 3721 62c05892ca68bc0ef66e796d1a920845 ""
+  "shearedgas.bib" 1543871881 7326 18f9ed7a521b5aaa23b55c3ad128cd81 ""
+  "shearedgasNotes.bib" 1543871889 0 d41d8cd98f00b204e9800998ecf8427e ""
   (generated)
   "shearedgas.bbl"
   "shearedgas.blg"
-["pdflatex"] 1543839520 "/home/yernur/gopath/src/github.com/yernurb/shearedgas/draft/shearedgas.tex" "shearedgas.pdf" "shearedgas" 1543839521
-  "/home/yernur/gopath/src/github.com/yernurb/shearedgas/draft/shearedgas.tex" 1543839519 522 197c9695a3292780a911b5eb32fe7df5 ""
+["pdflatex"] 1543871889 "/home/yernur/gopath/src/github.com/yernurb/shearedgas/draft/shearedgas.tex" "shearedgas.pdf" "shearedgas" 1543871889
+  "/home/yernur/gopath/src/github.com/yernurb/shearedgas/draft/shearedgas.tex" 1543871887 1295 e5398a71fa0ebf47c6b82e368f2a5aaa ""
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/sourcesanspro/a_5tbsmu.enc" 1483484466 3011 d3d1ad05c983e0655023dd6d2f40e3b0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/sourcesanspro/a_ggs4wk.enc" 1483484466 3005 0d6b678f4d9fa96bcea550609ec6c046 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
@@ -77,11 +77,11 @@
   "/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1543827597 2972202 0e02dba1829b9721132118a7a3cb496b ""
   "/usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt" 1543827629 4222494 82f99543820489b839c139883ca68800 ""
   "/usr/local/texlive/2018/texmf.cnf" 1543827591 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "shearedgas.aux" 1543839520 506 e71122e27804451bf856d947dfc9c346 ""
-  "shearedgas.bbl" 1543839520 2956 b85a929fbb23312fc18851b92bfbf36b "bibtex shearedgas"
-  "shearedgas.tex" 1543839519 522 197c9695a3292780a911b5eb32fe7df5 ""
+  "shearedgas.aux" 1543871889 3721 62c05892ca68bc0ef66e796d1a920845 ""
+  "shearedgas.bbl" 1543871889 16850 f31727d57ef59a200925caa3a0216f79 "bibtex shearedgas"
+  "shearedgas.tex" 1543871887 1295 e5398a71fa0ebf47c6b82e368f2a5aaa ""
   (generated)
   "shearedgas.log"
   "shearedgasNotes.bib"
-  "shearedgas.aux"
   "shearedgas.pdf"
+  "shearedgas.aux"
