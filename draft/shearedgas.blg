@@ -1,0 +1,63 @@
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: shearedgas.aux
+The style file: apsrev4-1.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: shearedgasNotes.bib
+Database file #2: shearedgas.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
+Control: key (0) 
+Control: author (72) initials jnrlst
+Control: editor formatted (1) identically to author
+Control: production of article title (-1) disabled
+Control: page (0) single
+Control: year (1) truncated
+Control: production of eprint (0) enabled
+You've used 27 entries,
+            5847 wiz_defined-function locations,
+            1777 strings with 19706 characters,
+and the built_in function-call counts, 26368 in all, are:
+= -- 1782
+> -- 623
+< -- 169
++ -- 199
+- -- 140
+* -- 3940
+:= -- 2633
+add.period$ -- 27
+call.type$ -- 27
+change.case$ -- 110
+chr.to.int$ -- 32
+cite$ -- 27
+duplicate$ -- 2409
+empty$ -- 1983
+format.name$ -- 377
+if$ -- 5289
+int.to.chr$ -- 2
+int.to.str$ -- 35
+missing$ -- 310
+newline$ -- 133
+num.names$ -- 81
+pop$ -- 1040
+preamble$ -- 1
+purify$ -- 135
+quote$ -- 0
+skip$ -- 1017
+stack$ -- 0
+substring$ -- 835
+swap$ -- 2220
+text.length$ -- 70
+text.prefix$ -- 0
+top$ -- 8
+type$ -- 366
+warning$ -- 0
+while$ -- 80
+width$ -- 0
+write$ -- 268
