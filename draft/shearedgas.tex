@@ -6,14 +6,103 @@
 %\usepackage[default]{sourcesanspro}
 %\usepackage[T1]{fontenc}
 
+\newcommand{\ab}{\alpha\beta}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\bx}{{\bf{x}}}
+\newcommand{\bv}{{\bf{v}}}
+\newcommand{\bu}{{\bf{u}}}
+\newcommand{\bc}{{\bf{c}}}
+
 \begin{document}
   \title{Sheared Granular Gas Dynamics}
   \author{Yernur Baibolatov}
-  \affiliation{STEM park, KazNPU after Abai}
+  \affiliation{Universit\"{a}t Potsdam, Institut f\"{u}r Physik und Astronomie}
   \maketitle
-  Hello \LaTeX. This is a test draft paper. Trying to make it work from VSCode. Adding BibTex file. Testing BibTex.
+  
+\section{Non-uniform granular gas system}
+ In this work we consider a rotating disk of granular gases with non-uniform size distribution of constituents
+ under external gravitational shear. Granular gases are well known for its intrinsic dissipative nature and hence
+ decay of velocity dispersion or \emph{granular temperature} if the system has nonzero initial energy. Let us start
+ our work with notations and definitions of necessary parameters. The total number of constituents in the system is $N$.
+ The number of species in our system is $s$ and the total number of constituents of species $\alpha$ is $N_\alpha$, 
+ where $\alpha\in[1,s]$.
+ Hence, we can write
+ \begin{equation}
+   \chi_\alpha=\frac{N_\alpha}{N}\;,\,\,\,\sum_{\alpha=1}^{s}\chi_\alpha=1\;,
+ \end{equation}
+ where $\chi_\alpha$ is the concentration of constituents of species $\alpha$.
+This means that there are $N_\alpha$ identical constituents with masses $m_\alpha$. 
+Obviously $m_\alpha\neq m_\beta$ if $\alpha\neq\beta$. Since a system of certain species consists of large number
+of constituents $N_\alpha$, it is considered as a statistical system and we analyze it through certain macroscopic parameters.
+Let us say that $P_\alpha$ is one of the macroscopic parameters of species $\alpha$, then for the whole system we can write
+\begin{equation}\label{eq:macroparameter_discrete}
+  P = \sum_{\alpha=1}^{s}\chi_\alpha\cdot P_\alpha\;.
+\end{equation}
+This is the mean value of macroparameter for the whole system across all species.
 
-  Looks like everything is correctly installed.
+In order to define the macroparameter $P_\alpha$ itself, we need to introduce the one-particle distribution function in the phase
+space of dynamic variables. The only dynamic variables of a single particle are coordinate $\bx$ and velocity $\bv$.
+Now, the one-particle distribution function, or simply distribution function, for species $\alpha$ is written as $F_{\alpha}(\bx,\bv)$.
+This function should have the next property
+\begin{equation}
+  \int F_\alpha(\bx,\bv)d\bx d\bv = n_\alpha = \frac{N_\alpha}{V}\;,
+\end{equation}
+where the integration is performed over all phase space and $n_\alpha$ is the number density of species $\alpha$, $V$ is the total volume 
+of the system. Note that $n_\alpha$ here is the average number density across the whole system volume $V$. We can write separately 
+coordinate and velocity distribution functions as 
+\begin{equation}
+  \begin{split}
+    g_\alpha(\bx) &= \int F_\alpha(\bx,\bv)d\bv\;,\\
+    f_\alpha(\bv) &= \int F_\alpha(\bx,\bv)d\bx\;,
+  \end{split}
+\end{equation}
+and obviously
+\begin{equation}
+  \int g_\alpha(\bx)d\bx = \int f_\alpha(\bv)d\bv = n_\alpha\;.
+\end{equation}
+Further, we will mostly use the velocity distribution function, since we know that all informative
+macroscopic parameters describing statistical systems are certain moments of dynamic functions of velocity $p_\alpha=p_\alpha(\bv)$.
+Hence corresponding macroparameter $P_\alpha$ is obtained from
+\begin{equation}
+  n_\alpha P_\alpha = \int p_\alpha(\bv)f_\alpha(\bv)d\bv\;.
+\end{equation}
+
+First three velocity moments corresponding to three physical values of mass, momentum and energy are written as 
+\begin{equation}
+  \begin{split}
+    \rho_\alpha &= m_\alpha n_\alpha = \int m_\alpha f_\alpha(\bv)d\bv\;,\\
+    \rho_\alpha \bu_\alpha &= \int m_\alpha\bv f_\alpha(\bv)d\bv\;,\\
+    \frac{D}{2}n_\alpha T_\alpha &= \int \frac{m_\alpha c^2}{2}f_\alpha(\bv)d\bv\;,
+  \end{split}
+\end{equation}
+where $\bc=\bv-\bu_\alpha$, $D=2$ for two dimensional and $D=3$ for three dimensional systems. These moments are mass density $\rho_\alpha$,
+momentum density $\rho_\alpha\bu_\alpha$ and granular temperature $T_\alpha$ correspondingly. 
+
+Let us now define the macroparameters for the whole system as
+\begin{equation}
+  \begin{split}
+    \rho &= \sum_{\alpha=1}^{s}\chi_\alpha\cdot\rho_\alpha\;,\\
+    \rho\bu &= \sum_{\alpha=1}^{s}\chi_\alpha\cdot\rho_\alpha\bu_\alpha\;,\\
+    nT &= \sum_{\alpha=1}^{s}\chi_\alpha\cdot n_\alpha T_\alpha\;,
+  \end{split}
+\end{equation}
+where
+\begin{equation}
+  n = \sum_{\alpha=1}^{s} n_\alpha = \frac{N}{V}\;.
+\end{equation}
+
+If we make the assumption that our system is very large and 
+highly non-uniform, i.e. we consider the limits $N\to\infty$ and $s\to\infty$, hence 
+\begin{equation}
+  \chi_\alpha\rightarrow\chi(\alpha)\;,
+\end{equation}
+our number density becomes the size distribution function, and (\ref{eq:macroparameter_discrete}) turns into integration over
+distribution function
+\begin{equation}
+  P = \int\limits_1^\infty P(\alpha)\chi(\alpha)d\alpha=\int P(\alpha)d\chi(\alpha)\;,
+\end{equation}
+and $P_\alpha\rightarrow P(\alpha)$ becomes the function of $\alpha$.
+
 
   \cite{Brilliantov:2004book, Bodrova:2014epl_steep_distr, Brilliantov:2007pre_coll_dyn, 
   Brilliantov:2007pre_coll_adh, Schwager:2007gm_coll_dyn, Dilley:1993icarus_energy_loss, 
