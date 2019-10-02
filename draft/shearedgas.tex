@@ -2,22 +2,27 @@
 
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{bm}
+\usepackage{esint}
 
 %\usepackage[default]{sourcesanspro}
 %\usepackage[T1]{fontenc}
 
-\newcommand{\ab}{\alpha\beta}
+\newcommand{\ab}{{\alpha\beta}}
 \newcommand{\eps}{\varepsilon}
-\newcommand{\bx}{{\bf{x}}}
-\newcommand{\bv}{{\bf{v}}}
-\newcommand{\bu}{{\bf{u}}}
-\newcommand{\bc}{{\bf{c}}}
+\newcommand{\bx}{{\bm{x}}}
+\newcommand{\bv}{{\bm{v}}}
+\newcommand{\bu}{{\bm{u}}}
+\newcommand{\bc}{{\bm{c}}}
+\newcommand{\bg}{{\bm{g}}}
+\newcommand{\bn}{{\bm{n}}}
+\newcommand{\pd}{\partial}
 
 \begin{document}
   \title{Sheared Granular Gas Dynamics}
-  \author{Yernur Baibolatov}
+  \author{Yernur Baibolatov and Frank Spahn}
   \affiliation{Universit\"{a}t Potsdam, Institut f\"{u}r Physik und Astronomie}
-  \maketitle
+  %\maketitle
   
 \section{Non-uniform granular gas system}
  In this work we consider a rotating disk of granular gases with non-uniform size distribution of constituents
@@ -25,7 +30,7 @@
  decay of velocity dispersion or \emph{granular temperature} if the system has nonzero initial energy. Let us start
  our work with notations and definitions of necessary parameters. The total number of constituents in the system is $N$.
  The number of species in our system is $s$ and the total number of constituents of species $\alpha$ is $N_\alpha$, 
- where $\alpha\in[1,s]$.
+ where $\alpha\in[1, s]$.
  Hence, we can write
  \begin{equation}
    \chi_\alpha=\frac{N_\alpha}{N}\;,\,\,\,\sum_{\alpha=1}^{s}\chi_\alpha=1\;,
@@ -103,16 +108,123 @@ distribution function
 \end{equation}
 and $P_\alpha\rightarrow P(\alpha)$ becomes the function of $\alpha$.
 
+\section{Contact mechanics}
 
-  \cite{Brilliantov:2004book, Bodrova:2014epl_steep_distr, Brilliantov:2007pre_coll_dyn, 
-  Brilliantov:2007pre_coll_adh, Schwager:2007gm_coll_dyn, Dilley:1993icarus_energy_loss, 
-  Garzo:2012pre_maxwell_gas, DeSoria:2013pre_hydro_gas, Schaefer:1996jphys_force_schemes, 
-  Garzo:2007pre_enskog_I, Garzo:2007pre_enskog_II, Garzo:1999pre_gran_mixture, 
-  Geminard:2004pre_gran_pressure, Quinn:2010astro_hill_simplectic, Barrat:2002gm_binary_mix, 
-  Hoffmann:2013astrolett_vertical_relax, Cuendet:2007jchem_md_simul, Uecker:2009pre_part_energy, 
-  Morishima:2006icarus_dense_ring_simul, Ohtsuki:1998icarus_vel_disp, Salo:2010icarus_N_body, 
-  Greenberg:1988icarus, Spahn:2006gamm_hydro_rings, Lois:2007pre_shear_flow, 
-  Spahn:2004euro_lett_kinetic_fraggr, Spahn:2000icarus_stability_analysis, WisdomTremaine:1988astro}.
+The evolution of the above defined distribution function is governed by Boltzmann equation. In order to write
+Boltzmann equation, we need to make sure that our system obeys certain conditions. First is the condition of low density, hence 
+the assumption of binary collisions. We assume, that at any time there are only binary interactions take place, 
+and never triple, quadruple etc. This means that when we describe the contact mechanics of particles, we consider only two particle
+interactions. Second is the molecular chaos assumption, or as Boltzmann described himself, \emph{Stosszahlansatz}. The idea is 
+that low density and high amount of particles allows us to assume that they are uncorrelated. Hence, the two-particle distribution
+function can be split into two one-particle distribution functions
+\begin{equation}
+  f_\ab(\bv_\alpha, \bv_\beta)=f_\alpha(\bv_\alpha)\cdot f_\beta(\bv_\beta)\;.
+\end{equation}
+
+These assumptions allow us to write the evolution of distribution function as a Boltzmann equation. But first, let us analyze the 
+contact mechanics of binary collisions. After a collision between a particle from species $\alpha$ and a particle from species $\beta$,
+the change of velocities is written as next
+\begin{equation}
+  \begin{split}
+    \bv'_\alpha &= \bv_\alpha - \frac{\mu}{m_\alpha}(1+\eps)(\bg\cdot\bn)\bn\;,\\
+    \bv'_\beta &= \bv_\beta + \frac{\mu}{m_\beta}(1+\eps)(\bg\cdot\bn)\bn\;,
+  \end{split}
+\end{equation}
+where $\bv'_\alpha,\,\bv'_\beta$ are postcollisional velocities, $\bg=\bv_\alpha-\bv_\beta$ is the impact velocity, $\bn$ is the collision
+unit vector, pointing from the center of particle $\alpha$ to the center of particle $\beta$ and $\eps$ is the restitution coefficient.
+\begin{equation}
+  \mu = \frac{m_\alpha m_\beta}{m_\alpha + m_\beta}\;,
+\end{equation}
+is the effective mass of the collision. Now we can calculate the change of kinetic energy due to collision 
+\begin{equation}
+  \begin{split}
+    \delta E_\alpha &= -\mu(1+\eps)(\bg\cdot\bn)(\bv_\alpha\cdot\bn)+\frac{\mu^2}{2m_\alpha}(1+\eps)^2(\bg\cdot\bn)^2\;,\\
+    \delta E_\beta &= +\mu(1+\eps)(\bg\cdot\bn)(\bv_\beta\cdot\bn)+\frac{\mu^2}{2m_\beta}(1+\eps)^2(\bg\cdot\bn)^2\;,
+  \end{split}
+\end{equation}
+or switching into center of mass frame of reference
+\begin{equation}
+  \begin{split}
+    \delta E_\alpha &= -\mu(1+\eps)(\bg\cdot\bn)(\bv_C\cdot\bn)-\frac{1-\eps^2}{2}\frac{\mu^2}{m_\alpha}(\bg\cdot\bn)^2\;,\\
+    \delta E_\beta &= +\mu(1+\eps)(\bg\cdot\bn)(\bv_C\cdot\bn)-\frac{1-\eps^2}{2}\frac{\mu^2}{m_\beta}(\bg\cdot\bn)^2\;,
+  \end{split}
+\end{equation}
+where $(m_\alpha+m_\beta)\bv_C=m_\alpha\bv_\alpha+m_\beta\bv_\beta$ is the center of mass velocity. The first terms in both expressions
+are identical with opposite signs. It means, that this part of energy is exchanged between the particles and stays in the system, without
+being dissipated. The second terms are always negative and describe the amount of energy which is dissipated due to collision. We can see 
+that particles with different mass dissipate different amount of energy, or to be more precise, particles with less mass dissipated
+more energy. This fact leads to important consequences, such us breakage of energy equipartition and onset of non-identical granular
+temperatures of different species. 
+
+\section{Granular temperature decay rate}
+The Boltzmann equation for our system is written in the next form 
+\begin{equation}
+  \frac{\pd f_\alpha}{\pd t}+\bv_\alpha\frac{\pd f_\alpha}{\pd\bx}-\frac{1}{m_\alpha}\frac{\pd\Phi(\bx)}{\pd\bx}\frac{\pd f_\alpha}{\pd\bv_\alpha}=
+  \sum_{\beta=1}^{s}\chi_\beta\cdot I_\ab(\bv_\alpha,\bv_\beta\vert f_\alpha,f_\beta)\;,
+\end{equation}
+where $\Phi(\bx)$ is the potential function of the external forcing and $I_\ab$ is the collision integral. In this work we are not going to 
+solve the Boltzmann equations, but rather assume that the solution of it is given in the Maxwellian form. The equation itself will be used
+to derive the hydrodynamic equations for macroparameters. Mainly we will focus on the temperature evolution equations. In order to derive
+the temperature evolution equations, we need to multiply the Boltzmann equation by $m_\alpha v_\alpha^2/2$ and integrate over the whole 
+velocity space. The left side of the equation will describe the evolution of the temperature due to dynamic flows and external heating. We will
+concentrate on it further in our work. At the moment let us describe the temperature decay rate due to pure collisions, which is governed
+by the right side of the Boltzmann equation. After integration over the velocity space, the right hand side of the temperature evolution 
+equation can be written in the next form
+\begin{equation}
+  \left\langle\frac{dE_\alpha}{dt}\right\rangle = \sum_{\beta=1}^{s}\chi_\beta\cdot\left\langle\frac{d E_\alpha}{dt}\right\rangle_\beta\;.
+\end{equation}
+
+The collision integral has the next property: given a certain dynamic function $\psi(\bv_\alpha)$, the next is true for two dimensional system
+\begin{equation}  
+  \left\langle\frac{d\psi_\alpha}{dt}\right\rangle=g_2(\sigma)\sigma\int d\bv_\alpha d\bv_\beta\int d\bn\,\Theta(-\bg\cdot\bn)\vert\bg\cdot\bn\vert
+  \times f_\alpha(\bv_\alpha)f_\beta(\bv_\beta)\Delta\psi(\bv_\alpha)\;,
+\end{equation}
+where $g_2(\sigma)=1$ is the pair correlation function, which we assume to unity for simplicity, and $\sigma=\sigma_\alpha+\sigma_\beta$ is 
+the cross section of the binary collision, and for two dimensional system it is simply the sum of particles' radii. If we use 
+$\psi(\bv_\alpha)=E_\alpha$, then
+\begin{equation}
+  \Delta\psi(\bv_\alpha)=\delta E_\alpha=-\mu(1+\eps)(\bg\cdot\bn)(\bc_\alpha\cdot\bn)+\frac{\mu^2}{2m_\alpha}(1+\eps)^2(\bg\cdot\bn)^2
+  -\mu(1+\eps)(\bg\cdot\bn)(\bu_\alpha\cdot\bn)\;,
+\end{equation}
+where $\bc_\alpha=\bv_\alpha-\bu_\alpha$. Since $\bg=\bv_\alpha-\bv_\beta=\bc_\alpha-\bc_\beta$, we can change variables as 
+$d\bv_\alpha d\bv_\beta=d\bc_\alpha d\bg$. Now, let us introduce several angular variables. First of all, since the collisions are 
+isotropic, for two dimensional case we have $d\bn=d\phi$, where we can take $\phi$ being an angle between $\bn$ and stationary vector 
+$\bu_\alpha$, and obviously $\phi\in[0, 2\pi]$. The angle between $\bg$ and $\bn$ will be $\theta$ and the angle between $\bg$ and $\bc_\alpha$
+will be $\gamma$. Now, we have
+\begin{equation}
+  \begin{split}
+    d\bn &= d\phi\;,\,\,\,\phi\in[0, 2\pi]\;,\\
+    \Theta(-\bg\cdot\bn)\vert\bg\cdot\bn\vert &= g\cos\theta\;,\,\,\,\theta\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right]\;,\\
+    \bg\cdot\bc_\alpha&= gc_\alpha\cos\gamma\;,\,\,\,\gamma\in[0, 2\pi]\;,\\
+    \bu_\alpha\cdot\bn &= u_\alpha\cos\phi\;,\\
+    \bc_\alpha\cdot\bn &= c_\alpha\cos(\gamma-\theta)\;,\\
+    d\bv_\alpha d\bv_\beta&=d\bc_\alpha d\bg = gc_\alpha dg dc_\alpha d\theta d\gamma\;,
+  \end{split}
+\end{equation}
+and now we can write
+\begin{equation}
+  \delta E_\alpha=-\mu(1+\eps)gc_\alpha\cos\theta\cos(\gamma-\theta)+\frac{\mu^2}{2m_\alpha}(1+\eps)^2g^2\cos^2\theta
+  -\mu(1+\eps)gu_\alpha\cos\theta\cos\phi\;,
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+%  \cite{Brilliantov:2004book, Bodrova:2014epl_steep_distr, Brilliantov:2007pre_coll_dyn, 
+%  Brilliantov:2007pre_coll_adh, Schwager:2007gm_coll_dyn, Dilley:1993icarus_energy_loss, 
+%  Garzo:2012pre_maxwell_gas, DeSoria:2013pre_hydro_gas, Schaefer:1996jphys_force_schemes, 
+%  Garzo:2007pre_enskog_I, Garzo:2007pre_enskog_II, Garzo:1999pre_gran_mixture, 
+%  Geminard:2004pre_gran_pressure, Quinn:2010astro_hill_simplectic, Barrat:2002gm_binary_mix, 
+%  Hoffmann:2013astrolett_vertical_relax, Cuendet:2007jchem_md_simul, Uecker:2009pre_part_energy, 
+%  Morishima:2006icarus_dense_ring_simul, Ohtsuki:1998icarus_vel_disp, Salo:2010icarus_N_body, 
+%  Greenberg:1988icarus, Spahn:2006gamm_hydro_rings, Lois:2007pre_shear_flow, 
+%  Spahn:2004euro_lett_kinetic_fraggr, Spahn:2000icarus_stability_analysis, WisdomTremaine:1988astro}.
 
 
   \bibliographystyle{apsrev4-1}

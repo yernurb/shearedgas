@@ -2,6 +2,7 @@ This is BibTeX, Version 0.99d (TeX Live 2019/dev/Debian)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: shearedgas.aux
 The style file: apsrev4-1.bst
+I found no \citation commands---while reading file shearedgas.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -20,44 +21,45 @@ Control: production of article title (-1) disabled
 Control: page (0) single
 Control: year (1) truncated
 Control: production of eprint (0) enabled
-You've used 27 entries,
+You've used 0 entries,
             5847 wiz_defined-function locations,
-            1777 strings with 19706 characters,
-and the built_in function-call counts, 26368 in all, are:
-= -- 1782
-> -- 623
-< -- 169
-+ -- 199
-- -- 140
-* -- 3940
-:= -- 2633
-add.period$ -- 27
-call.type$ -- 27
-change.case$ -- 110
-chr.to.int$ -- 32
-cite$ -- 27
-duplicate$ -- 2409
-empty$ -- 1983
-format.name$ -- 377
-if$ -- 5289
-int.to.chr$ -- 2
-int.to.str$ -- 35
-missing$ -- 310
-newline$ -- 133
-num.names$ -- 81
-pop$ -- 1040
+            1597 strings with 14618 characters,
+and the built_in function-call counts, 313 in all, are:
+= -- 0
+> -- 3
+< -- 5
++ -- 2
+- -- 0
+* -- 65
+:= -- 29
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 19
+empty$ -- 1
+format.name$ -- 0
+if$ -- 26
+int.to.chr$ -- 1
+int.to.str$ -- 8
+missing$ -- 0
+newline$ -- 52
+num.names$ -- 0
+pop$ -- 6
 preamble$ -- 1
-purify$ -- 135
+purify$ -- 0
 quote$ -- 0
-skip$ -- 1017
+skip$ -- 8
 stack$ -- 0
-substring$ -- 835
-swap$ -- 2220
-text.length$ -- 70
+substring$ -- 0
+swap$ -- 27
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 8
-type$ -- 366
+type$ -- 0
 warning$ -- 0
-while$ -- 80
+while$ -- 0
 width$ -- 0
-write$ -- 268
+write$ -- 52
+(There was 1 error message)
