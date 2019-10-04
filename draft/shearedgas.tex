@@ -17,6 +17,7 @@
 \newcommand{\bg}{{\bm{g}}}
 \newcommand{\bn}{{\bm{n}}}
 \newcommand{\pd}{\partial}
+\newcommand{\kp}{\kappa}
 
 \begin{document}
   \title{Sheared Granular Gas Dynamics}
@@ -202,15 +203,144 @@ will be $\gamma$. Now, we have
   \end{split}
 \end{equation}
 and now we can write
-\begin{equation}
+\begin{equation}\label{eq:delta_E}
   \delta E_\alpha=-\mu(1+\eps)gc_\alpha\cos\theta\cos(\gamma-\theta)+\frac{\mu^2}{2m_\alpha}(1+\eps)^2g^2\cos^2\theta
-  -\mu(1+\eps)gu_\alpha\cos\theta\cos\phi\;,
+  -\mu(1+\eps)gu_\alpha\cos\theta\cos\phi\;.
 \end{equation}
 
-
-
-
-
+To make further progress, we need to have a knowledge about the distribution function. The simplest case is the Maxwellian function, which
+we will be using throughout the course of our work. Hence, for two dimensional case we have
+\begin{equation}
+  f_\alpha(\bv_\alpha)=\frac{n_\alpha m_\alpha}{2\pi T_\alpha}\exp\left\{-\frac{m_\alpha(\bv_\alpha-\bu_\alpha)^2}{2T_\alpha}\right\}\;,
+\end{equation}
+or 
+\begin{equation}
+  f_\alpha(\bc_\alpha)=\frac{n_\alpha\kp_\alpha}{\pi}\exp\left(-\kp_\alpha c_\alpha^2\right)\;,
+\end{equation}
+where
+\begin{equation}
+  \kp_\alpha = \frac{m_\alpha}{2T_\alpha}\;.
+\end{equation}
+Now we can write
+\begin{equation}
+  f_\alpha(\bc_\alpha)f_\beta(\bc_\alpha-\bg)=\frac{n_\alpha n_\beta\kp_\alpha\kp_\beta}{\pi^2}
+  \exp\left(-(\kp_\alpha+\kp_\beta)c_\alpha^2-\kp_\beta g^2+2\kp_\beta g c_\alpha\cos\gamma\right)\;.
+\end{equation}
+Since, the angle $\phi$ appears only in the last term of (\ref{eq:delta_E}), we can perform the integration over $\phi$ immediately.
+The last term depending on the mean flow velocity vanishes, as 
+\begin{equation}
+  \int\limits_0^{2\pi}\cos\phi\,d\phi=0\;,
+\end{equation}
+and the other terms will have a factor of $2\pi$. Now, combining all terms and substitutions, we can finally write
+\begin{equation}
+  \begin{split}
+    \left\langle\frac{dE_\alpha}{dt}\right\rangle_\beta = &\nu_\ab\int dg dc_\alpha\,g^2c_\alpha
+    \exp(-(\kp_\alpha+\kp_\beta)c_\alpha^2-\kp_\beta g^2)\int\limits_0^{2\pi}d\gamma\exp(R\cos\gamma)\int\limits_{-\pi/2}^{\pi/2}d\theta\cos\theta\times\\
+    &\times\left[-\mu(1+\eps)gc_\alpha\cos\theta\cos(\gamma-\theta)+\frac{\mu^2}{2m_\alpha}(1+\eps)^2g^2\cos^2\theta\right]\;,
+  \end{split}
+\end{equation}
+where
+\begin{equation}
+  \begin{split}
+    \nu_\ab &= \frac{2\sigma}{\pi}n_\alpha n_\beta\kp_\alpha\kp_\beta\;,\\
+    R &= 2\kp_\beta gc_\alpha\;.
+  \end{split}
+\end{equation}
+Splitting $\cos(\gamma-\theta)=\cos\gamma\cos\theta+\sin\gamma\sin\theta$, we have
+\begin{equation}
+  \begin{split}
+    \left\langle\frac{dE_\alpha}{dt}\right\rangle_\beta = &\nu_\ab\int dg dc_\alpha\,g^2c_\alpha
+    \exp(-(\kp_\alpha+\kp_\beta)c_\alpha^2-\kp_\beta g^2)\int\limits_0^{2\pi}d\gamma\exp(R\cos\gamma)\times\\
+    &\times\left[-\mu(1+\eps)gc_\alpha\cdot(\cos\gamma\cdot S_{\theta,2}+\sin\gamma\cdot S_{\theta,1})
+    +\frac{\mu^2}{2m_\alpha}(1+\eps)^2g^2\cdot S_{\theta,2}\right]\;,
+  \end{split}
+\end{equation}
+where
+\begin{equation}
+  \begin{split}    
+    S_{\theta,1} &= \int\limits_{-\pi/2}^{\pi/2}\cos^2\theta\sin\theta\,d\theta=0\;,\\
+    S_{\theta,2} &= \int\limits_{-\pi/2}^{\pi/2}\cos^3\theta\,d\theta=\frac{4}{3}\;.
+  \end{split}
+\end{equation}
+Now we have
+\begin{equation}
+  \begin{split}
+    \left\langle\frac{dE_\alpha}{dt}\right\rangle_\beta = &\nu_\ab\int dg dc_\alpha\,g^2c_\alpha
+    \exp(-(\kp_\alpha+\kp_\beta)c_\alpha^2-\kp_\beta g^2)\int\limits_0^{2\pi}d\gamma\exp(R\cos\gamma)\times\\
+    &\times\left[\frac{2\mu^2}{3m_\alpha}(1+\eps)^2g^2-\frac{4\mu}{3}(1+\eps)gc_\alpha\cos\gamma\right]\;,
+  \end{split}
+\end{equation}
+and the integration over $\gamma$ becomes
+\begin{equation}
+  \begin{split}
+    \left\langle\frac{dE_\alpha}{dt}\right\rangle_\beta = &\nu_\ab\int dg dc_\alpha\,g^2c_\alpha
+    \exp(-(\kp_\alpha+\kp_\beta)c_\alpha^2-\kp_\beta g^2)\times\\
+    &\times\left[\frac{2\mu^2}{3m_\alpha}(1+\eps)^2g^2\cdot S_{\gamma,1}
+    -\frac{4\mu}{3}(1+\eps)gc_\alpha\cdot S_{\gamma,2}\right]\;,
+  \end{split}
+\end{equation}
+where
+\begin{equation}
+  \begin{split}
+    S_{\gamma,1} &= \int\limits_{0}^{2\pi}\exp(R\cos\gamma)\,d\gamma=2\pi I_0(R)\;,\\
+    S_{\gamma,2} &= \int\limits_{0}^{2\pi}\cos\gamma\exp(R\cos\gamma)\,d\gamma=2\pi I_1(R)\;,
+  \end{split}
+\end{equation}
+where $I_\nu(R),\,\nu=0,1$ are the modified Bessel functions. Now we can write
+\begin{equation}
+  \begin{split}
+    \left\langle\frac{dE_\alpha}{dt}\right\rangle_\beta = &\frac{4\pi}{3}\nu_\ab\int\limits_{0}^{\infty}dg\,g^2\exp(-\kp_\beta g^2)
+    \int\limits_{0}^{\infty}dc_\alpha\,c_\alpha\exp(-pc_\alpha^2)\times\\
+    &\times\left[\frac{\mu^2}{m_\alpha}(1+\eps)^2g^2\cdot I_0(rc_\alpha)-
+    2\mu(1+\eps)gc_\alpha\cdot I_1(rc_\alpha)\right]\;,
+  \end{split}
+\end{equation}
+where $p=\kp_\alpha+\kp_\beta$ and $r=2\kp_\beta g$. Using the next properties of the Bessel functions 
+\begin{equation}
+  \begin{split}
+    \int\limits_{0}^{\infty}dc_\alpha\,c_\alpha\exp(-pc_\alpha^2)I_0(rc_\alpha)&=\frac{1}{2p}\exp\left(\frac{r^2}{4p}\right)\;,\\
+    \int\limits_{0}^{\infty}dc_\alpha\,c_\alpha^2\exp(-pc_\alpha^2)I_1(rc_\alpha)&=\frac{r}{4p^2}\exp\left(\frac{r^2}{4p}\right)\;,
+  \end{split}
+\end{equation}
+and performing the standard integration
+\begin{equation}
+  \int\limits_{0}^{\infty}g^4e^{-\lambda g^2}\,dg =\frac{8}{3\lambda^2}\sqrt{\frac{\pi}{\lambda}}\;,\,\,\,\lambda>0\;,
+\end{equation}
+we end up with 
+\begin{equation}
+  \left\langle\frac{dE_\alpha}{dt}\right\rangle_\beta = \sqrt{\frac{\pi}{\lambda}}\cdot\sigma n_\alpha n_\beta\times
+  \left[\frac{\mu(1+\eps)}{2m_\alpha\lambda}-\frac{1}{\kp_\alpha}\right]\mu(1+\eps)\;,
+\end{equation}
+where
+\begin{equation}
+  \lambda = \frac{\kp_\alpha\kp_\beta}{\kp_\alpha+\kp_\beta}=\frac{1}{2}\frac{m_\alpha m_\beta}{m_\alpha T_\beta+m_\beta T_\alpha}\;.
+\end{equation}
+After straightforward arithmetic manipulations, we can finally write
+\begin{equation}
+  \left\langle\frac{dE_\alpha}{dt}\right\rangle_\beta = \sqrt{2\pi}\sigma n_\alpha n_\beta\cdot\frac{\mu}{m_\alpha}
+  \sqrt{\frac{m_\alpha T_\beta+m_\beta T_\alpha}{m_\alpha m_\beta}}\left[-(1-\eps^2)T_\alpha + \frac{\mu}{m_\beta}(1+\eps)^2
+  (T_\beta-T_\alpha)\right]\;.
+\end{equation}
+In order to give the physical meaning to this result, let us first calculate the collision frequency $\omega_\ab$ between species $\alpha$
+and $\beta$. By simple logic we can write that collision frequency is
+\begin{equation}
+  \omega_\ab = n_\alpha n_\beta\sigma_\ab\langle g_\ab\rangle\;,
+\end{equation}
+where $\langle g_\ab\rangle$ is the mean value of the impact velocity. The calculation of any two particle dynamic function can be performed
+by the following expression
+\begin{equation}
+  \langle g_\ab\rangle=\frac{\int g_\ab\cdot f_\alpha(\bc_\alpha)f_\beta(\bc_\beta)\,d\bc_\alpha d\bc_\beta}
+  {\int f_\alpha(\bc_\alpha)f_\beta(\bc_\beta)\,d\bc_\alpha d\bc_\beta}\;,
+\end{equation}
+and using Maxwellian form of distribution function, we have 
+\begin{equation}
+  \langle g_\ab\rangle=\sqrt{\frac{\pi}{2}\frac{m_\alpha T_\beta+m_\beta T_\alpha}{m_\alpha m_\beta}}\;,
+\end{equation}
+and write 
+\begin{equation}
+  \left\langle\frac{dE_\alpha}{dt}\right\rangle_\beta = \omega_\ab\times\left(-(1-\eps^2)\frac{2\mu}{m_\alpha}T_\alpha+
+  (1+\eps)^2\frac{2\mu^2}{m_\alpha m_\beta}(T_\beta-T_\alpha)\right)\;.
+\end{equation}
 
 
 

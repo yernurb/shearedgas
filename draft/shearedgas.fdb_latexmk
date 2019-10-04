@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex shearedgas"] 1570012681 "shearedgas.aux" "shearedgas.bbl" "shearedgas" 1570013567
+["bibtex shearedgas"] 1570045401 "shearedgas.aux" "shearedgas.bbl" "shearedgas" 1570103240
   "/usr/share/texlive/texmf-dist/bibtex/bst/revtex/apsrev4-1.bst" 1547851249 71518 fec93f06df0c073f83d2330456bd19c2 ""
-  "shearedgas.aux" 1570013567 539 f47a611576067a009258d3ca1c6d8e62 ""
+  "shearedgas.aux" 1570103240 576 aca9f738c3f5aacdd781fdb307d8d4ff ""
   "shearedgas.bib" 1569829267 7326 18f9ed7a521b5aaa23b55c3ad128cd81 ""
-  "shearedgasNotes.bib" 1570013567 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "shearedgasNotes.bib" 1570103240 0 d41d8cd98f00b204e9800998ecf8427e ""
   (generated)
   "shearedgas.blg"
   "shearedgas.bbl"
-["pdflatex"] 1570013567 "/home/yernur/Documents/shearedgas/draft/shearedgas.tex" "/home/yernur/Documents/shearedgas/draft/shearedgas.pdf" "shearedgas" 1570013567
+["pdflatex"] 1570103240 "/home/yernur/Documents/shearedgas/draft/shearedgas.tex" "/home/yernur/Documents/shearedgas/draft/shearedgas.pdf" "shearedgas" 1570103240
   "/etc/texmf/web2c/texmf.cnf" 1565419407 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/yernur/Documents/shearedgas/draft/shearedgas.aux" 1570013567 539 f47a611576067a009258d3ca1c6d8e62 ""
-  "/home/yernur/Documents/shearedgas/draft/shearedgas.tex" 1570013567 13316 95e6550cd5bbdc4c4ce036fb89a9a22d ""
+  "/home/yernur/Documents/shearedgas/draft/shearedgas.aux" 1570103240 576 aca9f738c3f5aacdd781fdb307d8d4ff ""
+  "/home/yernur/Documents/shearedgas/draft/shearedgas.tex" 1570103240 20048 c6ac09229173396413c9ea1d252d907c ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1480098698 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1480098698 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -47,6 +47,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1480098733 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb" 1480098733 36912 b448ef9ad9d7228ec3c6e71005136d55 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1480098733 32722 d7379af29a190c3f453aba36302ff5a9 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1480098733 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1480098733 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1480098733 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1480098733 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
@@ -75,13 +76,13 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1551226139 34566 ab5be96bde1a5acfd4f881dbe566b5fb ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1565419465 3236060 fd056e42459c13cbcb0cc6e0a7cae8d4 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1565419500 4225229 92bd535956019d635ad3c3fa3c8639bb ""
-  "shearedgas.aux" 1570013567 539 f47a611576067a009258d3ca1c6d8e62 ""
-  "shearedgas.bbl" 1570012682 1984 b68c31deb1db589a77cf4936360c75bb "bibtex shearedgas"
-  "shearedgas.tex" 1570013567 13316 95e6550cd5bbdc4c4ce036fb89a9a22d ""
+  "shearedgas.aux" 1570103240 576 aca9f738c3f5aacdd781fdb307d8d4ff ""
+  "shearedgas.bbl" 1570045401 1984 b68c31deb1db589a77cf4936360c75bb "bibtex shearedgas"
+  "shearedgas.tex" 1570103240 20048 c6ac09229173396413c9ea1d252d907c ""
   (generated)
-  "shearedgas.pdf"
   "shearedgas.aux"
+  "/home/yernur/Documents/shearedgas/draft/shearedgas.pdf"
+  "shearedgas.log"
   "/home/yernur/Documents/shearedgas/draft/shearedgas.log"
   "shearedgasNotes.bib"
-  "shearedgas.log"
-  "/home/yernur/Documents/shearedgas/draft/shearedgas.pdf"
+  "shearedgas.pdf"
