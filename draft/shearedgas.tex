@@ -16,6 +16,8 @@
 \newcommand{\bc}{{\bm{c}}}
 \newcommand{\bg}{{\bm{g}}}
 \newcommand{\bn}{{\bm{n}}}
+\newcommand{\be}{{\bm{e}}}
+\newcommand{\bw}{{\bm{w}}}
 \newcommand{\pd}{\partial}
 \newcommand{\kp}{\kappa}
 
@@ -159,7 +161,7 @@ temperatures of different species.
 
 \section{Granular temperature decay rate}
 The Boltzmann equation for our system is written in the next form 
-\begin{equation}
+\begin{equation}\label{eq:Boltzmann_eq}
   \frac{\pd f_\alpha}{\pd t}+\bv_\alpha\frac{\pd f_\alpha}{\pd\bx}-\frac{1}{m_\alpha}\frac{\pd\Phi(\bx)}{\pd\bx}\frac{\pd f_\alpha}{\pd\bv_\alpha}=
   \sum_{\beta=1}^{s}\chi_\beta\cdot I_\ab(\bv_\alpha,\bv_\beta\vert f_\alpha,f_\beta)\;,
 \end{equation}
@@ -341,6 +343,125 @@ and write
   \left\langle\frac{dE_\alpha}{dt}\right\rangle_\beta = \omega_\ab\times\left(-(1-\eps^2)\frac{2\mu}{m_\alpha}T_\alpha+
   (1+\eps)^2\frac{2\mu^2}{m_\alpha m_\beta}(T_\beta-T_\alpha)\right)\;.
 \end{equation}
+
+\section{Differentially rotating flat disk}
+We assume azimuthally symmetric flat disk with rotational frequency 
+\begin{equation}
+  \Omega(r) = \sqrt{\frac{GM}{r^3}}\;,
+\end{equation}
+where $G$ is gravitational constant, $M$ is the mass of central planet and $r$ is the distance to the center of the planet.
+Switching to the frame of reference, rotating with frequency $\Omega_0=\Omega(r_0)$ at a distance $r_0$ from the center of the planet,
+the equation of motion for particles in such a box will be governed by the so called Hill's equations. In two dimensional case and in the 
+absence of kicks from moons, they read
+\begin{equation}
+  \begin{split}
+    \ddot{x}-2\Omega_0\dot{y}-3\Omega_0^2x &= 0\;,\\
+    \ddot{y}+2\Omega_0\dot{x} &= 0\;,
+  \end{split}
+\end{equation} 
+where $x$ is the radial distance from the center of the box, $y$ is orbital distance from the center of the box, and $x,y\ll r_0$ is assumed.
+Since the rotation of the disk is stationary, the tangential acceleration is absent $\ddot{x}=\ddot{y}=0$, hence
+\begin{equation}\label{eq:Hill}
+  \begin{split}
+    \dot{x} &= 0\;,\\
+    \dot{y} &= -\frac{3}{2}\Omega_0 x\;,
+  \end{split}
+\end{equation}
+and the mean flow velocity $\bu=\dot{x}\be_x+\dot{y}\be_y$ is
+\begin{equation}
+  \bu = -\frac{3}{2}\Omega_0 x\cdot\be_y\;,
+\end{equation}
+where $\be_x$ and $\be_y$ are radial and orbital unit vectors correspondingly. Now, multiplying first and second equations in (\ref{eq:Hill})
+by $\dot{x}$ and $\dot{y}$, and summing them, we have
+\begin{equation}
+  \dot{x}\ddot{x} + \dot{y}\ddot{y} = 3\Omega_0^2x\dot{x}\;,
+\end{equation}
+and since $v^2=\dot{x}^2+\dot{y}^2$, we can write
+\begin{equation}
+  \frac{d}{dt}\left(\frac{v^2}{2}\right)=\dot{x}\ddot{x} + \dot{y}\ddot{y} = 3\Omega_0^2x\dot{x} = 
+  \frac{d}{dt}\left(\frac{3}{2}\Omega_0^2x^2\right)\;,
+\end{equation}
+or 
+\begin{equation}
+  \frac{dH(\bx,\bv)}{dt}=\frac{d}{dt}\left(\frac{mv^2}{2}+\Phi(\bx)\right)=0\;,
+\end{equation}
+where $\Phi(\bx)$ is the potential function of a particle with mass $m$
+\begin{equation}
+  \Phi(\bx) = -\frac{3}{2}m\Omega_0^2x^2\;.
+\end{equation}
+Now, the acceleration of a particle can be obtained from
+\begin{equation}
+  m\bw = -\frac{\pd\Phi}{\pd x}\be_x-\frac{\pd\Phi}{\pd y}\be_y\;,
+\end{equation}
+with the result
+\begin{equation}
+  \bw = 3\Omega_0^2 x\cdot\be_x\;.
+\end{equation}
+This is the centripetal acceleration in the non-inertial rotating frame of reference.
+
+\section{Hydrodynamic approximation}
+The Boltzmann equation (\ref{eq:Boltzmann_eq}) can be used to derive the hydrodynamic equations for certain macroparameter $A(\bv)$,
+or the so called balance equations. In order to do so, one needs to multiply (\ref{eq:Boltzmann_eq}) by $A(\bv)$ and integrate
+over $\bv$. Then, after simple manipulations we obtain 
+\begin{equation}
+  \frac{\pd}{\pd t}\int Af_\alpha d\bv + \frac{\pd}{\pd x_i}\int Af_\alpha v_i d\bv
+  -\int f\left[\frac{\pd A}{\pd t}+v_i\frac{\pd A}{\pd x_i}+w_i\frac{\pd A}{\pd v_i}\right]d\bv=\left(\frac{\pd A}{\pd t}\right)_c\;,
+\end{equation}
+where we used the fact that 
+\begin{equation}
+  \int\frac{\pd}{\pd v_i}(Af_\alpha w_i)d\bv=\oint Af_\alpha w_i\cdot d{\bm{\sigma}} = 0\;.
+\end{equation}
+Here and further by $i,j,k$ we will denote the cartesian coordinates. Using the next notations
+\begin{equation}
+  \begin{split}
+    n_\alpha &= \int f_\alpha\,d\bv\;,\\
+    n_\alpha u_i &= \int v_i f_\alpha\,d\bv\;,\\
+    p_{ijk} &= \int (v_i-u_i)(v_j-u_j)(v_k-u_k)f_\alpha\,d\bv\;,
+  \end{split}
+\end{equation}
+where $\bu_\alpha=\bu=u_i$ is the mean flow velocity and $p_{ijk}$ is the pressure tensor, and consequently setting $A=1$, $A=v_i$ and $A=v_iv_j$
+we will obtain continuity equation, momentum balance equation and viscous-stress equation. Let us first write the next macroparameters
+\begin{equation}
+  \begin{split}
+    \int v_iv_j f_\alpha\,d\bv &= p_{ij}+n_\alpha u_iu_j\;,\\
+    \int v_iv_jv_k f_\alpha\,d\bv &= p_{ijk} + u_ip_{jk} + u_jp_{ik} + u_kp_{ij} + n_\alpha u_iu_ju_k\;,
+  \end{split}
+\end{equation}
+and using 
+\begin{equation}
+  w_i = -\frac{1}{m_\alpha}\frac{\pd\Phi}{\pd x_i}=-\frac{\pd U}{\pd x_i}\;,
+\end{equation}
+we write
+\begin{equation}
+  \begin{split}
+    \frac{\pd n_\alpha}{\pd t} + \frac{\pd}{\pd x_i}(n_\alpha u_i) &= \left(\frac{\pd n_\alpha}{\pd t}\right)_c\;,\\
+    \frac{\pd}{\pd t}(n_\alpha u_i) + \frac{\pd}{\pd x_j}(p_{ij}+n_\alpha u_iu_j)+n_\alpha\frac{\pd U}{\pd x_i} 
+    &= \left(\frac{\pd}{\pd t}(n_\alpha u_i)\right)_c\;,\\
+    \frac{\pd}{\pd t}(p_{ij}+n_\alpha u_iu_j)+n_\alpha\left(u_i\frac{\pd U}{\pd x_j}+u_j\frac{\pd U}{\pd x_i}\right) +& \\
+    +\frac{\pd}{\pd x_k}(p_{ijk}+u_ip_{jk}+u_jp_{ik}+u_kp_{ij}+n_\alpha u_iu_ju_k) &= \left(\frac{\pd}{\pd t}(p_{ij}+n_\alpha u_iu_j)\right)_c\;,
+  \end{split}
+\end{equation}
+and after some algebra we obtain
+\begin{equation}
+  \begin{split}
+    \frac{\pd n_\alpha}{\pd t} + \frac{\pd}{\pd x_i}(n_\alpha x_i) &= 0\;,\\
+    \frac{\pd u_i}{\pd t} + u_j\frac{\pd u_i}{\pd x_j} + \frac{1}{n_\alpha}\frac{\pd p_{ij}}{\pd x_j} &= -\frac{\pd U}{\pd x_i}\;,\\
+    \frac{\pd p_{ij}}{\pd t}+p_{jk}\frac{\pd u_i}{\pd x_k} + p_{ik}\frac{\pd u_j}{\pd x_k} + \frac{\pd}{\pd x_k}(u_kp_{ij}) 
+    &= \left(\frac{\pd p_{ij}}{\pd t}\right)_c\;,
+  \end{split}
+\end{equation}
+where we made the next assumptions
+\begin{equation}
+  \begin{split}
+    \left(\frac{\pd n_\alpha}{\pd t}\right)_c &= 0\;,\\
+    \left(\frac{\pd}{\pd t}(n_\alpha u_i)\right)_c &= 0\;,\\
+    \frac{\pd p_{ijk}}{\pd x_k} &= 0\;,
+  \end{split}
+\end{equation}
+because of mass and momentum conservation. Also, we assumed that the random motion $\pd p_{ijk}/\pd x_k$ is much smaller than the mean flow
+motion, hence was neglected.
+
+
 
 
 
