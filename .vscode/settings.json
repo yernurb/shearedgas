@@ -4,5 +4,6 @@
         "macroparameter",
         "macroparameters",
         "postcollisional"
-    ]
+    ],
+    "python.pythonPath": "/home/yernur/.virtualenvs/sci/bin/python"
 }
